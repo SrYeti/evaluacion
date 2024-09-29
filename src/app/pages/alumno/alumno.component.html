@@ -1,12 +1,13 @@
 <app-header></app-header>
-<div class="main-container">
-  <h1>Bienvenido, {{nombreAlumno}}</h1>
-  <h2>Mis Asignaturas</h2>
-  <ul>
-    <li *ngFor="let asignatura of asignaturas">
-      <button (click)="verAsignatura(asignatura.id)">{{ asignatura.nombre }}</button>
-    </li>
-  </ul>
-  <button (click)="cerrarSesion()">Cerrar Sesión</button>
-</div>
+<ion-content>
+  <div class="container">
+    <h1>Página del Alumno</h1>
+    <p>Lista de asignaturas inscritas:</p>
+    <ion-list>
+      <ion-item *ngFor="let asignatura of asignaturas">
+        {{ asignatura.nombre }}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
 <app-footer></app-footer>
