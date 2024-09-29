@@ -1,7 +1,22 @@
-<footer class="app-footer">
-  <nav>
-    <ul>
-      <li><a (click)="cerrarSesion()">Cerrar Sesión</a></li>
-    </ul>
-  </nav>
-</footer>
+<div class="pie">
+  <!-- Enlace mostrado cuando no ha iniciado sesión -->
+  <p *ngIf="!usuario">
+    <a [routerLink]="['/sesion']">Login</a>
+  </p>
+
+  <!-- Enlaces mostrados cuando el usuario ha iniciado sesión como alumno -->
+  <ng-container *ngIf="usuario && usuario.rol === 'alumno'">
+    <p><a [routerLink]="['/home']">Home</a></p>
+    <p><a [routerLink]="['/alumno']">Alumno</a></p>
+    <p><a [routerLink]="['/asig-alumno']">Asignaturas</a></p>
+    <p><a (click)="logout()">Logout</a></p> <!-- Logout a implementar después -->
+  </ng-container>
+
+  <!-- docente -->
+  <ng-container *ngIf="usuario && usuario.rol === 'docente'">
+    <p><a [routerLink]="['/home']">Home</a></p>
+    <p><a [routerLink]="['/docente']">Docente</a></p>
+    <p><a [routerLink]="['/asig-docente']">Asignaturas</a></p>
+    <p><a (click)="logout()">Logout</a></p>
+  </ng-container>
+</div>
