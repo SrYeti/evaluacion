@@ -1,14 +1,25 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-docente',
   templateUrl: './docente.component.html',
-  styleUrls: ['./docente.component.scss'],
+  styleUrls: ['./docente.component.scss']
 })
-export class DocenteComponent  implements OnInit {
+export class DocenteComponent {
+  nombreDocente = 'Profesor Juan';
+  asignaturas = [
+    { id: 1, nombre: 'Matemáticas' },
+    { id: 2, nombre: 'Física' }
+  ];
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  verAsignatura(id: number) {
+    this.router.navigate(['/asig-docente', id]);
+  }
 
+  cerrarSesion() {
+    this.router.navigate(['/sesion']);
+  }
 }

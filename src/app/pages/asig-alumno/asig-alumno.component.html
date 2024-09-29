@@ -1,3 +1,6 @@
-<p>
-  asig-alumno works!
-</p>
+<div class="asignatura-container">
+  <h2>Detalles de Asignatura: {{asignatura.nombre}}</h2>
+  <p>Contenido: {{asignatura.contenido}}</p>
+  <p>Fecha y Hora: {{asignatura.fechaHora}}</p>
+  <button (click)="escanearQR()">Escanear Código QR</button>
+</div>

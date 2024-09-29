@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-restablecer',
   templateUrl: './restablecer.component.html',
-  styleUrls: ['./restablecer.component.scss'],
+  styleUrls: ['./restablecer.component.scss']
 })
-export class RestablecerComponent  implements OnInit {
+export class RestablecerComponent {
+  email: string = '';
 
-  constructor() { }
-
-  ngOnInit() {}
-
+  restablecer() {
+    alert('Solicitud de restablecimiento enviada a ' + this.email);
+  }
 }

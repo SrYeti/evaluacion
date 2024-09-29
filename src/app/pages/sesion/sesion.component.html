@@ -1,3 +1,17 @@
-<p>
-  sesion works!
-</p>
+<div class="login-container">
+  <h2>Iniciar Sesión</h2>
+  <form>
+    <label for="username">Usuario:</label>
+    <input id="username" [(ngModel)]="username" type="text" placeholder="Ingrese su usuario">
+
+    <label for="password">Contraseña:</label>
+    <input id="password" [(ngModel)]="password" type="password" placeholder="Ingrese su contraseña">
+
+    <div class="button-container">
+      <button (click)="login()">Iniciar Sesión</button>
+      <button (click)="restablecer()">Restablecer Contraseña</button>
+    </div>
+
+    <p *ngIf="errorMessage" class="error">{{errorMessage}}</p>
+  </form>
+</div>

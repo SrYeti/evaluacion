@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent } from './home/home.component'; // Ruta de home dentro de pages
+import { HomeComponent } from './home/home.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { AsigAlumnoComponent } from './asig-alumno/asig-alumno.component';
 import { AsigDocenteComponent } from './asig-docente/asig-docente.component';
