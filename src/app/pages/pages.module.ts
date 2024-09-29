@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { PagesRoutingModule } from './pages-routing.module';
+import { SharedModule } from '../shared/shared.module';
 
 import { HomeComponent } from './home/home.component';
 import { AlumnoComponent } from './alumno/alumno.component';
@@ -29,7 +30,8 @@ import { SesionComponent } from './sesion/sesion.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    SharedModule
   ]
 })
 export class PagesModule { }
