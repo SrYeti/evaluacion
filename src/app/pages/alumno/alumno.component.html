@@ -1,13 +1,13 @@
-<app-header></app-header>
 <ion-content>
-  <div class="container">
-    <h1>Página del Alumno</h1>
-    <p>Lista de asignaturas inscritas:</p>
-    <ion-list>
-      <ion-item *ngFor="let asignatura of asignaturas">
-        {{ asignatura.nombre }}
-      </ion-item>
-    </ion-list>
-  </div>
+  <app-header></app-header>
+    <div class="container">
+      <h1>Página del Alumno</h1>
+      <p>Lista de asignaturas inscritas:</p>
+      <ion-list>
+        <ion-item *ngFor="let asignatura of asignaturas">
+          {{ asignatura.nombre }}
+        </ion-item>
+      </ion-list>
+    </div>
+  <app-footer></app-footer>
 </ion-content>
-<app-footer></app-footer>

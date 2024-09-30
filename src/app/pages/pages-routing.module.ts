@@ -11,6 +11,7 @@ import { RestablecerComponent } from './restablecer/restablecer.component';
 import { SesionComponent } from './sesion/sesion.component';
 
 const routes: Routes = [
+  { path: '', component: HomeComponent},
   { path: 'home', component: HomeComponent },
   { path: 'alumno', component: AlumnoComponent },
   { path: 'asig-alumno', component: AsigAlumnoComponent },
@@ -19,8 +20,6 @@ const routes: Routes = [
   { path: 'restablecer', component: RestablecerComponent },
   { path: 'sesion', component: SesionComponent },
   { path: 'not-found', component: NotFoundComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({

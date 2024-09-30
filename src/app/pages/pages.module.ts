@@ -15,6 +15,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RestablecerComponent } from './restablecer/restablecer.component';
 import { SesionComponent } from './sesion/sesion.component';
 
+
 @NgModule({
   declarations: [
     HomeComponent,
