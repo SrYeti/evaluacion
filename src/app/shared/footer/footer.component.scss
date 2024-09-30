@@ -1,19 +1,27 @@
 .pie {
-  background-color: #333;
+  background-color: #007bff;
   color: #fff;
   padding: 10px;
   text-align: center;
+}
 
-  p {
-    margin: 5px 0;
-  }
+.pie ul {
+  list-style-type: none; /* Elimina los puntos de la lista */
+  padding: 0; /* Elimina el padding interno del ul */
+  margin: 0; /* Elimina el margen externo del ul */
+  display: flex; /* Alinea los elementos en línea (horizontalmente) */
+  justify-content: center; /* Centra los elementos horizontalmente */
+}
 
-  a {
-    color: #00f;
-    text-decoration: none;
+.pie ul li {
+  margin: 0 15px; /* Añade espacio entre los enlaces */
+}
 
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+.pie a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.pie a:hover {
+  text-decoration: underline;
 }

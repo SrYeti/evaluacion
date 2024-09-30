@@ -7,20 +7,33 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  usuario: { rol: string } | null = null; // Simula el estado de sesión del usuario
+  usuario: { rol: string } | null = null;
 
   constructor(private router: Router) {
-    this.checkSession(); // Simula la comprobación de sesión al cargar el componente
+    this.checkSession();
   }
 
   checkSession() {
-    // Aquí podrías obtener el estado de sesión real. Simulamos que un alumno está logueado.
-    this.usuario = { rol: 'alumno' }; // O 'docente' dependiendo del perfil
+    this.usuario = { rol: 'alumno' }; // Puedes cambiar a 'docente' para simular el otro rol
   }
 
   logout() {
-    // Aquí va la lógica de cerrar sesión
     this.usuario = null;
-    this.router.navigate(['/sesion']); // Redirigir al login
+    this.router.navigate(['/sesion']);
+  }
+
+  // Función para verificar si el usuario está logueado
+  isLoggedIn() {
+    return this.usuario !== null;
+  }
+
+  // Función para verificar si el usuario es un alumno
+  isAlumno() {
+    return this.usuario?.rol === 'alumno';
+  }
+
+  // Función para verificar si el usuario es un docente
+  isDocente() {
+    return this.usuario?.rol === 'docente';
   }
 }
