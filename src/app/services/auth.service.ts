@@ -1,10 +1,9 @@
-import { inject, Injectable } from '@angular/core';
-import { datosdePrueba } from '../models/datos';
-import { datosAsignaturas } from '../models/datos';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuario } from '../models/usuario.model';
+import { Asignatura } from '../models/asignaturas.model';
 
 @Injectable({
   providedIn: 'root',
 })
-export class AuthService {
-  constructor() {}
-}
+export class AuthService {}

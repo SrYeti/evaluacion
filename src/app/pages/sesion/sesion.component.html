@@ -1,17 +1,41 @@
+import { NgModule } from '@angular/core'; import { CommonModule } from
+'@angular/common'; import { FormsModule } from '@angular/forms'; import {
+IonicModule } from '@ionic/angular'; // Asegúrate de que IonicModule está
+importado import { SesionComponent } from './sesion.component'; // Tu componente
+
 <ion-content>
   <app-header></app-header>
   <div class="container">
     <h1>Iniciar sesión</h1>
+
+    <!-- Campo de usuario -->
     <ion-item>
       <ion-label position="floating">Usuario</ion-label>
-      <ion-input></ion-input>
+      <ion-input [(ngModel)]="usuario" type="text"></ion-input>
     </ion-item>
+
+    <!-- Campo de contraseña -->
     <ion-item>
       <ion-label position="floating">Contraseña</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input [(ngModel)]="clave" type="password"></ion-input>
     </ion-item>
-    <ion-button>Iniciar sesión</ion-button>
-    <ion-button>Restablecer contraseña</ion-button>
+
+    <!-- Botón para iniciar sesión -->
+    <ion-button expand="full" (click)="login()">Iniciar sesión</ion-button>
+
+    <!-- Botón para restablecer contraseña -->
+    <ion-button
+      expand="full"
+      color="secondary"
+      (click)="restablecerContrasena()"
+    >
+      Restablecer contraseña
+    </ion-button>
+
+    <!-- Mostrar mensaje de error si el login falla -->
+    <ion-text color="danger" *ngIf="loginFailed">
+      Usuario o contraseña incorrectos.
+    </ion-text>
   </div>
   <app-footer></app-footer>
 </ion-content>

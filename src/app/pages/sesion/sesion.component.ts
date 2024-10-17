@@ -1,29 +1,39 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-sesion',
   templateUrl: './sesion.component.html',
-  styleUrls: ['./sesion.component.scss']
+  styleUrls: ['./sesion.component.scss'],
 })
-export class SesionComponent {
-  username: string = '';
-  password: string = '';
-  errorMessage: string = '';
+export class SesionPage {
+  usuario: string = '';
+  clave: string = '';
+  loginFailed: boolean = false;
 
-  constructor(private router: Router) {}
+  constructor(private AuthService: AuthService, private router: Router) {}
 
+  // Método para iniciar sesión
   login() {
-    if (this.username === 'docente') {
-      this.router.navigate(['/docente']);
-    } else if (this.username === 'alumno') {
-      this.router.navigate(['/alumno']);
+    const user = this.AuthService.login(this.usuario, this.clave);
+
+    if (user) {
+      this.loginFailed = false;
+      // Redirigir según el rol
+      if (user.rol === 'docente') {
+        this.router.navigate(['/docente']);
+      } else if (user.rol === 'alumno') {
+        this.router.navigate(['/alumno']);
+      }
     } else {
-      this.errorMessage = 'Credenciales incorrectas. Intente nuevamente.';
+      this.loginFailed = true; // Mostrar mensaje de error
     }
   }
 
-  restablecer() {
-    this.router.navigate(['/restablecer']);
+  // Método para restablecer la contraseña (puedes personalizarlo)
+  restablecerContrasena() {
+    // Aquí puedes agregar la lógica de restablecimiento
+    console.log('Restablecer contraseña');
   }
 }
