@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Generar QR</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="qr-container" text-center>
+    <h2>QR para la asistencia de clase</h2>
+
+    <!-- Generar el código QR -->
+    <qrcode
+      [qrdata]="qrCodeData"
+      [width]="256"
+      [errorCorrectionLevel]="'M'"
+    ></qrcode>
+  </div>
+
+  <!-- Botón para el escáner de alumnos (solo mostrarlo, sin funcionalidad) -->
+  <ion-button expand="block" color="primary">
+    Escanear QR para registrar asistencia
+  </ion-button>
+</ion-content>
